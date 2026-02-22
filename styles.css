@@ -59,7 +59,7 @@ section{
     padding: 180px 48px 120px;
     max-width: 1200px;
 }
-hero h1 {
+section h1 {
     font-size: clamp(48px, 7vw, 88px);
     font-weight: 800;
     line-height: 1.08;
@@ -67,5 +67,68 @@ hero h1 {
     max-width: 850px;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1)/*note to self: or use ease, starts fast ends slow*/ 0.1s forwards;
+  }
+  section p {
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--gray);
+    max-width: 520px;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+  section a {
+    margin-top: 48px;
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 18px 32px;
+    border-radius: 50px;
+    transition: background 0.25s, transform 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  }
+  section a:hover {
+    background: #222;
+    transform: translateY(-2px);
+  }
+  .cookie-content {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid #e8e8e8;
+    padding: 14px 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--gray);
+    z-index: 200;
+  }
+  .cookie-button {
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+   @media (max-width: 640px) {
+    nav { padding: 20px 24px; }
+    section { padding: 140px 24px 80px; }
+    section h1 { letter-spacing: -1px; }
+    .cookie-content { padding: 14px 24px; flex-wrap: wrap; }
   }
